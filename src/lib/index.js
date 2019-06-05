@@ -1,3 +1,4 @@
-import TextInput from "./TextInput";
+import TextInput from './TextInput';
+import InputOnSteroids from './InputOnSteroids';
 
-export { TextInput };
+export { TextInput, InputOnSteroids };
