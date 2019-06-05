@@ -1,9 +1,9 @@
-import React from "react";
-import "./TextInput.css";
+import React from 'react';
+import './TextInput.css';
 
-const TextInput = ({ type = "text", label, value, onChange }) => (
+const TextInput = ({ type = 'text', label, value, onChange }) => (
   <div className="simple-form-group">
-    {label && <label className="simple-text-label">{label}</label>}
+    {label && <div className="simple-text-label">{label}</div>}
     <input
       type={type}
       className="simple-text-input"
