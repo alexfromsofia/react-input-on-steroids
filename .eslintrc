@@ -5,6 +5,7 @@
     "allowImportExportEverywhere": false,
     "codeFrame": false
   },
+  "plugins": ["react-hooks"],
   "extends": ["airbnb", "prettier"],
   "env": {
     "browser": true,
@@ -16,6 +17,9 @@
     "react/jsx-filename-extension": ["off"],
     "react/prop-types": ["warn"],
     "no-return-assign": ["off"],
-    "import/no-extraneous-dependencies": false
+    "import/no-extraneous-dependencies": false,
+    "import/prefer-default-export": false,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }
