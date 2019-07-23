@@ -5,5 +5,5 @@ import { useInput } from './Hooks/inputHook';
 export const Input = ({ id, type }) => {
   const { bind } = useInput(id);
 
-  return <input type={type} {...bind} />;
+  return <input className="input-type-text" type={type} {...bind} />;
 };

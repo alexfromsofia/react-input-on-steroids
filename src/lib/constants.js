@@ -1,7 +1,9 @@
 export const INPUT_TYPES = {
   TEXT: 'TEXT',
+  HTML: 'HTML',
 };
 
 export const ACTION_TYPES = {
   UPDATE_TEXT_FIELD: 'UPDATE_TEXT_FIELD',
+  ADD_HTML_FIELD: 'ADD_HTML_FIELD',
 };

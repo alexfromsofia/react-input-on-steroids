@@ -16,9 +16,14 @@ export const useInput = id => {
           payload: { value: event.target.value, id },
         });
       },
-      // onKeyPress: event => {
-      //   console.log(event.target);
-      // },
+      onKeyPress: event => {
+        if (event.key === '@') {
+          event.preventDefault();
+          dispatch({
+            type: ACTION_TYPES.ADD_HTML_FIELD,
+          });
+        }
+      },
     },
   };
 };

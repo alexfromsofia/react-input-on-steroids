@@ -2,13 +2,13 @@ import uuid from 'uuid';
 
 import { INPUT_TYPES, ACTION_TYPES } from '../constants';
 
-export const initialInputTypeTextState = {
+export const initialInputState = type => ({
   id: uuid(),
-  type: INPUT_TYPES.TEXT,
+  type,
   value: '',
-};
+});
 export const initialState = {
-  inputsList: [initialInputTypeTextState],
+  inputsList: [initialInputState(INPUT_TYPES.TEXT)],
 };
 
 export const mainReducer = (state, action) => {
@@ -29,6 +29,17 @@ export const mainReducer = (state, action) => {
         }),
       };
     }
+
+    case ACTION_TYPES.ADD_HTML_FIELD:
+      return {
+        ...state,
+        inputsList: [
+          ...state.inputsList,
+          initialInputState(INPUT_TYPES.HTML),
+          initialInputState(INPUT_TYPES.TEXT),
+        ],
+      };
+
     default:
       return state;
   }
