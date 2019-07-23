@@ -1,11 +1,9 @@
 import React from 'react';
 
-import { useInput } from './Hooks/input';
+import { useInput } from './Hooks/inputHook';
 
 export const Input = ({ id, type }) => {
-  const { bind } = useInput('');
+  const { bind } = useInput(id);
 
-  return <input key={id} type={type} {...bind} />;
+  return <input type={type} {...bind} />;
 };
-
-export default Input;

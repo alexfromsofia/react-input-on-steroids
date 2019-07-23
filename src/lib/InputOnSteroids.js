@@ -1,28 +1,22 @@
-import React, { useState } from 'react';
-import uuid from 'uuid';
-import Input from './Input';
+import React from 'react';
 
-export const INPUT_TYPES = {
-  TEXT: 'TEXT',
-};
-
-export const initialInputState = [{ id: uuid(), type: INPUT_TYPES.TEXT, value: 'bblablbalalb' }];
+import { useStateValue } from './State';
+import { INPUT_TYPES } from './constants';
+import { Input } from './Input';
 
 export const renderInputs = props => {
-  const { type } = props;
+  const { type, id } = props;
 
   switch (type) {
     case INPUT_TYPES.TEXT:
-      return <Input {...props} />;
+      return <Input key={id} {...props} />;
     default:
       return null;
   }
 };
 
-function InputOnSteroids() {
-  const [inputs] = useState(initialInputState);
+export const InputOnSteroids = () => {
+  const [{ inputsList }] = useStateValue();
 
-  return <div>{inputs.map(renderInputs)}</div>;
-}
-
-export default InputOnSteroids;
+  return <div>{inputsList.map(renderInputs)}</div>;
+};
