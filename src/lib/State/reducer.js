@@ -1,8 +1,8 @@
-import uuid from 'uuid';
+import uuid from 'uuid/v4';
 
 import { INPUT_TYPES, ACTION_TYPES } from '../constants';
 
-export const initialInputState = type => ({
+export const initialInputState = (type) => ({
   id: uuid(),
   type,
   value: '',
@@ -18,7 +18,7 @@ export const mainReducer = (state, action) => {
 
       return {
         ...state,
-        inputsList: state.inputsList.map(input => {
+        inputsList: state.inputsList.map((input) => {
           if (input.id === id) {
             return {
               ...input,
